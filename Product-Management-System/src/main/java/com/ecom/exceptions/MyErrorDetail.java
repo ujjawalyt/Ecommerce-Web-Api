@@ -1,4 +1,4 @@
-package com.ecom.model.controller;
+package com.ecom.exceptions;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,5 +17,6 @@ public class MyErrorDetail {
 	private LocalDateTime timestamp;
 	private String message;
 	private String description;
+	
 	
 }

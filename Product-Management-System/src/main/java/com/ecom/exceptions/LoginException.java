@@ -1,4 +1,4 @@
-package com.ecom.model.controller;
+package com.ecom.exceptions;
 
 public class LoginException extends Exception{
 
