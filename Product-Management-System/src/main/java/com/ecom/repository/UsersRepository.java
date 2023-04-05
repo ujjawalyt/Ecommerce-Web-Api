@@ -8,4 +8,6 @@ import com.ecom.model.Users;
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Long> {
 
+	public Users findByUsername(String username);
+	public Users findByMobileNumber(String mobileNumber);
 }

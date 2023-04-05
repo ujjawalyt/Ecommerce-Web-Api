@@ -35,11 +35,11 @@ public class Users extends AbstractUser {
 	private Long userId;
 	
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "users" , cascade = CascadeType.ALL)
      private Cart cart;
 	
 	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany( mappedBy = "users", cascade = CascadeType.ALL)
 	private List<Orders> orders;
 
 	

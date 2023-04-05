@@ -29,14 +29,14 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long productId;
-	@NotNull(message ="productname should not be null")
+//	@NotNull(message ="productname should not be null")
 	private String productName;
-	@NotNull(message ="product description should not be null")
+//	@NotNull(message ="product description should not be null")
 	private String descprition;
 	
-	@NotNull(message ="product price should not be null")
+//	@NotNull(message ="product price should not be null")
 	private Double price;
-	@NotNull(message ="product stock should not be null")
+//	@NotNull(message ="product stock should not be null")
 	private Integer stock;
 	
 	
