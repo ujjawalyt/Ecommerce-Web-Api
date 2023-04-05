@@ -37,7 +37,7 @@ public class Cart {
 	
 	
 	 @OneToOne
-	 private Users user;
+	 private Users users;
 	
 	 @OneToMany
 	 Set<Product> product = new HashSet<>();
