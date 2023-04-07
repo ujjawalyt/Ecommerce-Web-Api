@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
- class Address {
+public class Address {
 
 	    
 	    private String city;

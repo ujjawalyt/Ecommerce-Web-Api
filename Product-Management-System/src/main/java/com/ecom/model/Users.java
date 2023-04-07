@@ -34,9 +34,13 @@ public class Users extends AbstractUser {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userId;
 	
+//	@JsonIgnore
+//	@OneToOne(mappedBy = "users" , cascade = CascadeType.ALL)
+//     private Cart cart;
 	
-	@OneToOne(mappedBy = "users" , cascade = CascadeType.ALL)
-     private Cart cart;
+	   @JsonIgnore
+	  @OneToOne(cascade = CascadeType.ALL)
+	    private Cart cart;
 	
 	@JsonIgnore
 	@OneToMany( mappedBy = "users", cascade = CascadeType.ALL)
