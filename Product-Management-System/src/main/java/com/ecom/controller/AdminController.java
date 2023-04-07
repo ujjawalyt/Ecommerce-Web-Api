@@ -37,7 +37,7 @@ public class AdminController {
 	
 	
 		@DeleteMapping("/delete/{key}")
-	public ResponseEntity<String> deleteByKeyHandler(@PathVariable("key") String key)throws AdminNotFoundException{
+	public ResponseEntity<String> deleteAdminHandler(@PathVariable("key") String key)throws AdminNotFoundException{
 		
 		return new ResponseEntity<String>(adminSevice.deleteAdmin(key), HttpStatus.OK);
 	}

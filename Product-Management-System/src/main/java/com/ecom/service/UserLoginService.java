@@ -2,8 +2,8 @@ package com.ecom.service;
 
 import org.springframework.stereotype.Service;
 
+import com.ecom.dto.UserLoginDto;
 import com.ecom.exceptions.LoginException;
-import com.ecom.model.UserLoginDto;
 
 @Service
 public interface UserLoginService {

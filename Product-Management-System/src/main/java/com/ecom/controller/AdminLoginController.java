@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecom.dto.AdminLoginDto;
+import com.ecom.dto.UserLoginDto;
 import com.ecom.exceptions.AdminNotFoundException;
 import com.ecom.exceptions.LoginException;
-import com.ecom.model.AdminLoginDto;
-import com.ecom.model.UserLoginDto;
 import com.ecom.service.AdminLoginService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;

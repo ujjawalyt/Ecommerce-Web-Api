@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecom.dto.UserLoginDto;
 import com.ecom.exceptions.LoginException;
-import com.ecom.model.UserLoginDto;
 import com.ecom.service.UserLoginService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;

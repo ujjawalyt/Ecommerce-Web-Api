@@ -2,8 +2,8 @@ package com.ecom.service;
 
 import org.springframework.stereotype.Service;
 
+import com.ecom.dto.AdminLoginDto;
 import com.ecom.exceptions.AdminNotFoundException;
-import com.ecom.model.AdminLoginDto;
 
 @Service
 public interface AdminLoginService {

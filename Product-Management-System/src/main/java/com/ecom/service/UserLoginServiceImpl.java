@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ecom.dto.UserLoginDto;
 import com.ecom.exceptions.LoginException;
 import com.ecom.model.CurrentUserSession;
-import com.ecom.model.UserLoginDto;
 import com.ecom.model.Users;
 import com.ecom.repository.CurrentUserSessionDao;
 import com.ecom.repository.UsersRepository;
