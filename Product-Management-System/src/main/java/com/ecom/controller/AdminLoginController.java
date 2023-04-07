@@ -8,28 +8,31 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecom.exceptions.AdminNotFoundException;
 import com.ecom.exceptions.LoginException;
+import com.ecom.model.AdminLoginDto;
 import com.ecom.model.UserLoginDto;
-import com.ecom.service.UserLoginService;
+import com.ecom.service.AdminLoginService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
-@RequestMapping("/ecom")
-public class LoginLogoutController {
+@RequestMapping("/ecom/admin")
+public class AdminLoginController {
 
 	@Autowired
-	private UserLoginService userLoginService;
+	private AdminLoginService adminLoginService;
+	
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> userLoginHandler(@RequestBody UserLoginDto userLoginDto) throws LoginException{
+	public ResponseEntity<String> userLoginHandler(@RequestBody  AdminLoginDto adminLoginDto) throws AdminNotFoundException{
 		
-		return new  ResponseEntity<String>(userLoginService.logIntoAccount(userLoginDto) ,HttpStatus.ACCEPTED);
+		return new  ResponseEntity<String>(adminLoginService.logIntoAccount(adminLoginDto) ,HttpStatus.ACCEPTED);
 	}
 	
 	@DeleteMapping("/logout")
-	public ResponseEntity<String> userLogoutHandler(String key) throws LoginException{
+	public ResponseEntity<String> userLogoutHandler(String key) throws AdminNotFoundException{
 		
-		return new ResponseEntity<String>(userLoginService.logoutFromAccount(key),HttpStatus.OK);
+		return new ResponseEntity<String>(adminLoginService.logoutFromAccount(key),HttpStatus.OK);
 	}
 }

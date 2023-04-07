@@ -8,4 +8,7 @@ import com.ecom.model.Admin;
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, Long>{
 
+	public Admin findByUsername(String username);
+
+	
 }

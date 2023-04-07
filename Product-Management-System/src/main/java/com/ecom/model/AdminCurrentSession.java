@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AdminCurrentSession {
 
 	@Id
