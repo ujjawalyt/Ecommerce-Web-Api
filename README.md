@@ -41,6 +41,26 @@ The Product Management System is a web-based application that enables organizati
 `http://localhost:8888/swagger-ui.html`
 
 
+### Admin Module
+
+* `POST /add` : Register a new admin with proper data validation and admin session
+* `POST /login` : Admin can login with username  and password provided at the time of registation
+*  DELETE/logout : Admin can logout from session key;
+* `PUT /update/{key}` : Updates admin details
+* `DELETE /delete/{key}` : Deletes the admin with passed key
+
+
+### Users Module
+
+
+* `POST /save` : Adding new users
+* `POST /login` : Users can login with username  and password provided at the time of registation
+*  DELETE/logout : Users can logout from session key;
+* `PUT /update` : Updates Users details 
+* `DELETE /delete/{id}` : Deletes logged in user on the basis of id
+* `GET /Users/{id}` : Getting Users on the basis of id
+
+
 #### For any feedback, report, suggestions, you can contact with me
 ### THANK YOU
 
