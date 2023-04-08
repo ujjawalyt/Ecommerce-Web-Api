@@ -65,7 +65,7 @@ The Product Management System is a web-based application that enables organizati
 `Request Body:` User object in JSON format
 * `DELETE /delete/{id}` : Deletes an existing user from the system
 `Path Parameters:`id: The ID of the user to delete
-`Request Header:` Authorization containing the session ke
+`Request Header:` Authorization containing the session key
 * `GET /Users/{id}` : Retrieves a user by their ID `Path Parameters:` id: The ID of the user to retrieve
 `Request Header:` Authorization containing the session key
 
