@@ -21,6 +21,7 @@ The Product Management System is a web-based application that enables organizati
 -  Admin Module
 -  Users Module
 -  Category Module
+-  Product Module
 
 
 
