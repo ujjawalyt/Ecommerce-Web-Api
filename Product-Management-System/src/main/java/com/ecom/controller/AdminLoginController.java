@@ -25,13 +25,13 @@ public class AdminLoginController {
 	
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> userLoginHandler(@RequestBody  AdminLoginDto adminLoginDto) throws AdminNotFoundException{
+	public ResponseEntity<String> adminLoginHandler(@RequestBody  AdminLoginDto adminLoginDto) throws AdminNotFoundException{
 		
 		return new  ResponseEntity<String>(adminLoginService.logIntoAccount(adminLoginDto) ,HttpStatus.ACCEPTED);
 	}
 	
 	@DeleteMapping("/logout")
-	public ResponseEntity<String> userLogoutHandler(String key) throws AdminNotFoundException{
+	public ResponseEntity<String> adminLogoutHandler(String key) throws AdminNotFoundException{
 		
 		return new ResponseEntity<String>(adminLoginService.logoutFromAccount(key),HttpStatus.OK);
 	}
