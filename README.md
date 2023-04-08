@@ -83,8 +83,7 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
   `Request Body`: JSON object representing the category to be added
 * `PUT /update/{adminKey}/{categoryId}` : `adminKey`: The admin key to authenticate the request
    `categoryId`: The id of the category to be updated
-Request Body: JSON object representing the updated category details
-
+`Request Body:` JSON object representing the updated category details
 * `DELETE /delete/{adminKey}/{categoryId}` : `adminKey`: The admin key to authenticate the request
 `categoryId`: The id of the category to be deleted
 * `GET /getAll/{adminKey}` : `adminKey` : The admin key to authenticate the request
@@ -92,6 +91,18 @@ Request Body: JSON object representing the updated category details
 `categoryId`: The id of the category to be retrieved
 
 
+### Category Module
+
+
+* `POST /save/{categoryId}/{adminKey}` : Adds a new product to the system and associates it with the specified category.
+* `DELETE /delete/{productId}/{adminKey}` : Deletes a product from the system based on its unique identifier and the admin key provided.
+* `GET /{productId}` : Retrieves a product from the system based on its unique identifier.
+* `GET /getAll` : Retrieves all products stored in the system.
+* `GET /{productName}` : Retrieves a list of products that match the given product name.
+* `PUT /update/{productId}/{adminKey}` : Updates a product's details based on its unique identifier and the admin key provided.
+* `GET /getAll/sortByPrice` : Retrieves all products sorted by price in either ascending or descending order.
+* `GET ResponseEntity` : Retrieves all products sorted by rating in ascending order.
+* `GET /getAllByRatingDesc` : Retrieves all products sorted by rating in descending order.
 
 #### For any feedback, report, suggestions, you can contact with me
 ### THANK YOU
