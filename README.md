@@ -20,6 +20,7 @@ The Product Management System is a web-based application that enables organizati
 -  Users Login Module
 -  Admin Module
 -  Users Module
+-  Category Module
 
 
 
@@ -56,10 +57,23 @@ The Product Management System is a web-based application that enables organizati
 
 * `POST /save` : Adding new users
 * `POST /login` : Users can login with username  and password provided at the time of registation
-*  `DELETE/logout` : Users can logout from session key
+* `DELETE/logout` : Users can logout from session key
 * `PUT /update` : Updates Users details 
 * `DELETE /delete/{id}` : Deletes logged in user on the basis of id
 * `GET /Users/{id}` : Getting Users on the basis of id
+
+
+### Category Module
+
+
+* `POST /save/{adminKey}` : The admin key to authenticate the request
+  Request Body: JSON object representing the category to be added
+* 
+*
+* `PUT /update/{adminKey}/{categoryId}` : Updates Category details 
+* `DELETE /delete/{id}` : Deletes logged in user on the basis of id
+* `GET /Users/{id}` : Getting Users on the basis of id
+
 
 
 #### For any feedback, report, suggestions, you can contact with me
