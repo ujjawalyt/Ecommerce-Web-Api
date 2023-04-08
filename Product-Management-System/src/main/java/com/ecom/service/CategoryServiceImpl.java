@@ -27,7 +27,7 @@ public class CategoryServiceImpl implements CategoryService{
 		
 		AdminCurrentSession isPresent = currentAdminSessionDao.findByAdminKey(adminKey);
 		if(isPresent==null) {
-			throw new AdminNotFoundException("Admin not Found With this admin key. please put valid Admin key..!");
+			throw new AdminNotFoundException("Admin not Found With this admin key, please put valid Admin key..!");
 		}
 		Category category2 = categoryRepository.findByType(category.getType());
 		if(category2!=null) {

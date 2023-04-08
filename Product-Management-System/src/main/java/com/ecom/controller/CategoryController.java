@@ -52,14 +52,14 @@ public class CategoryController {
 	}
 	
 	
-	@GetMapping("all/{adminKey}")
+	@GetMapping("getAll/{adminKey}")
 	public ResponseEntity<List<Category>> getAllCategoryHandler(@PathVariable("adminKey") String key)
 throws AdminNotFoundException,CategoryNotFoundException{
 		
 		return new ResponseEntity<List<Category>>(categoryService.getAllCategory(key),HttpStatus.ACCEPTED);
 	}
 	
-	@GetMapping("/{adminKey}/{categoryId}")
+	@GetMapping("getById/{adminKey}/{categoryId}")
 	public ResponseEntity<Category> viewByCategoryIdHandler(@PathVariable("adminKey") String key,@PathVariable("categoryId") Long categoryId)
 	
 	throws AdminNotFoundException,CategoryNotFoundException{
