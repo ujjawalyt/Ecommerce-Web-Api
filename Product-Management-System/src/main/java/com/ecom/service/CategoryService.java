@@ -1,4 +1,4 @@
-package com.ecom.repository;
+package com.ecom.service;
 
 import java.util.List;
 

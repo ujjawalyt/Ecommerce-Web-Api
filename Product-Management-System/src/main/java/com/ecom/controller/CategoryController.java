@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.ecom.exceptions.AdminNotFoundException;
 import com.ecom.exceptions.CategoryNotFoundException;
 import com.ecom.model.Category;
-import com.ecom.repository.CategoryService;
+import com.ecom.service.CategoryService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 

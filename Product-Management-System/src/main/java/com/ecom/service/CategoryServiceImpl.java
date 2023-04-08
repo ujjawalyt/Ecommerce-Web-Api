@@ -1,4 +1,4 @@
-package com.ecom.repository;
+package com.ecom.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +10,8 @@ import com.ecom.exceptions.AdminNotFoundException;
 import com.ecom.exceptions.CategoryNotFoundException;
 import com.ecom.model.AdminCurrentSession;
 import com.ecom.model.Category;
+import com.ecom.repository.CategoryRepository;
+import com.ecom.repository.CurrentAdminSessionDao;
 
 @Service
 public class CategoryServiceImpl implements CategoryService{
