@@ -1,6 +1,12 @@
 # Ecommerce-Web-Api
 
-The Product Management System is a web-based application that enables organizations to manage their product inventory and sales. This project contains the backend implementation of the Product Management System using Spring Boot.
+The Ecommerce-Web-Api is a backend implementation of the Product Management System built with Spring Boot. This web-based application enables organizations to effectively manage their product inventory and sales. The API provides various endpoints to perform operations related to product management such as adding, updating, and deleting products, as well as retrieving products based on various criteria such as category, price range, and availability. Additionally, it also provides endpoints for managing user accounts, such as creating new accounts, updating account details, and logging in and out of the system. With its user-friendly interface and robust functionality, the Ecommerce-Web-Api is an essential tool for any organization looking to streamline their product management and sales processes.
+
+
+
+
+
+
 
 
 ### Technical Stacks
