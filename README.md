@@ -46,22 +46,28 @@ The Product Management System is a web-based application that enables organizati
 
 ### Admin Module
 
-* `POST /add` : Register a new admin with proper data validation and admin session
-* `POST /login` : Admin can login with username  and password provided at the time of registation
-* `DELETE/logout` : Admin can logout from session key
-* `PUT /update/{key}` : Updates admin details
-* `DELETE /delete/{key}` : Deletes the admin with passed key
+* `POST /save` : Adds a new admin to the system.
+* `POST /login` : Allows an admin to login to the system using their username and password.`Request Body`: JSON object representing the admin's login credentials
+*  `DELETE /logout/{sessionKey}` : `Path Parameters`: `sessionKey` The session key of the admin to logout
+* `PUT /update/{sessionKey}`: `Path Parameters`: `sessionKey` The session key of the admin to update
+`Request Body`: JSON object representing the updated admin details
+* `DELETE /delete/{sessionKey}` : `Path Parameters :` `sessionKey` The session key of the admin to delete
 
 
 ### Users Module
 
 
-* `POST /save` : Adding new users
-* `POST /login` : Users can login with username  and password provided at the time of registation
-* `DELETE/logout` : Users can logout from session key
-* `PUT /update` : Updates Users details 
-* `DELETE /delete/{id}` : Deletes logged in user on the basis of id
-* `GET /Users/{id}` : Getting Users on the basis of id
+* `POST /save` : Adds a new user to the system.
+* `POST /login` : Allows a user to login with their username and password. `Request Body`: UserLoginDto object in JSON format
+* `DELETE/logout` : Allows a user to logout from the system. `Request Header:` Authorization containing the session key
+* `PUT /update` : Updates an existing user in the system.
+`Request Header:` Authorization containing the session key
+`Request Body:` User object in JSON format
+* `DELETE /delete/{id}` : Deletes an existing user from the system
+`Path Parameters:`id: The ID of the user to delete
+`Request Header:` Authorization containing the session ke
+* `GET /Users/{id}` : Retrieves a user by their ID `Path Parameters:` id: The ID of the user to retrieve
+`Request Header:` Authorization containing the session key
 
 
 ### Category Module
