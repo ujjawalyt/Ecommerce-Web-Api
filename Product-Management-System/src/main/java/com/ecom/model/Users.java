@@ -38,6 +38,7 @@ public class Users extends AbstractUser {
 //	@OneToOne(mappedBy = "users" , cascade = CascadeType.ALL)
 //     private Cart cart;
 	
+	
 	   @JsonIgnore
 	  @OneToOne(cascade = CascadeType.ALL)
 	    private Cart cart;

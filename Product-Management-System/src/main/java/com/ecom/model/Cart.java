@@ -32,8 +32,8 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy =  GenerationType.AUTO)
 	private Long cartId;
-	private Double price;
-	private Integer quantity;
+	private Double totalPrice;
+	private Integer totalQuantity;
 	private String imageUrl;
 	
 	
