@@ -1,9 +1,12 @@
 package com.ecom.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -15,6 +18,7 @@ import com.ecom.exceptions.LoginException;
 import com.ecom.exceptions.ProductNotFoundException;
 import com.ecom.exceptions.UsersNotFoundException;
 import com.ecom.model.Cart;
+import com.ecom.model.Product;
 import com.ecom.service.CartService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -63,5 +67,21 @@ public class CartController {
 		return new ResponseEntity<String>(cart,HttpStatus.OK);
 	}
 	
+	@PutMapping("remove/{userId}")
+	public ResponseEntity<String> removeAllProductFromCartHandler
+	(@PathVariable ("userId") Long  userId) 
+			throws   ProductNotFoundException,UsersNotFoundException, LoginException , CartException{
+		
+		String cart = cartService.clearProductFromCart(userId);
+		return new ResponseEntity<String>(cart,HttpStatus.OK);
+	}
+	
+	@GetMapping("getAll/{userId}/{cartId}")
+	public ResponseEntity<List<Product>> getListOfProductFromCartHandler
+	(@PathVariable ("userId")Long userId,@PathVariable ("cartId")Long cartId)
+			throws CartException,LoginException,UsersNotFoundException{
+		
+		return new ResponseEntity<List<Product>>(cartService.viewAllProductFromCart(userId, cartId),HttpStatus.OK);
+	}
 	
 }

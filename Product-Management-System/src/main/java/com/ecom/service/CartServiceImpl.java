@@ -262,6 +262,72 @@ public class CartServiceImpl implements CartService {
 		
 		
 	}
+
+	@Override
+	public String clearProductFromCart(Long userId) throws CartException, LoginException ,UsersNotFoundException{
+		
+		
+	    if (userId == null) {
+	        throw new IllegalArgumentException("userId cannot be null");
+	    }
+		
+	    
+	    
+	    Optional<Users> optionalUser = usersRepository.findById(userId);
+	    if (!optionalUser.isPresent()) {
+	        throw new UsersNotFoundException("User with ID " + userId + " not found");
+	    }
+	    Users users = optionalUser.get();
+	    
+	    
+	    Optional<CurrentUserSession> isCurrent = currentUserSessionDao.findById(users.getUserId());
+	    if(!isCurrent.isPresent()) {
+	    	throw new LoginException("User is not Loggin With this userId"+ userId);
+	    }
+	   
+	    
+	    Cart cart = optionalUser.get().getCart();
+	    cart.getProduct().clear();
+	    cart.setTotalPrice(0.0);
+	    cart.setTotalQuantity(0);
+	    cartRepository.save(cart);
+
+	    return "Cart Item is removed Successfully..!";
+		
+	}
+
+	@Override
+	public List<Product> viewAllProductFromCart(Long userId ,Long cartId) throws CartException, LoginException, UsersNotFoundException {
+		
+		
+		
+	    if (userId == null) {
+	        throw new IllegalArgumentException("userId cannot be null");
+	    }
+	    
+	    Optional<Users> optionalUser = usersRepository.findById(userId);
+	    if (!optionalUser.isPresent()) {
+	        throw new UsersNotFoundException("User with ID " + userId + " not found");
+	    }
+	    Users users = optionalUser.get();
+	    
+	    
+	    Optional<CurrentUserSession> isCurrent = currentUserSessionDao.findById(users.getUserId());
+	    if(!isCurrent.isPresent()) {
+	    	throw new LoginException("User is not Loggin With this userId"+ userId);
+	    }
+	    
+	    Cart cart = users.getCart();
+	    if (cart == null) {
+	        throw new CartException("Cart not found for user with ID " + userId);
+	    }
+	    
+	    return cart.getProduct();
+		
+		
+		
+		
+	}
 	    
 	    
 	    

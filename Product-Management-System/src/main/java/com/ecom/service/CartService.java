@@ -1,5 +1,7 @@
 package com.ecom.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.ecom.exceptions.CartException;
@@ -7,6 +9,7 @@ import com.ecom.exceptions.LoginException;
 import com.ecom.exceptions.ProductNotFoundException;
 import com.ecom.exceptions.UsersNotFoundException;
 import com.ecom.model.Cart;
+import com.ecom.model.Product;
 
 @Service
 public interface CartService {
@@ -72,6 +75,30 @@ public interface CartService {
 	
 	public String decreaseProductQuantity(Long productId, int quantity,Long userId)
 			throws  ProductNotFoundException,UsersNotFoundException, LoginException , CartException;
+	
+	
+	/**
+	* This method is used to clear a user's cart by removing all products.
+	* @param userId The ID of the user who owns the cart.
+	* @return A message indicating whether or not the cart was successfully cleared.
+	* @throws UsersNotFoundException If the user specified by the userId parameter cannot be found in the system.
+	* @throws LoginException If there is an authentication error while attempting to clear the user's cart.
+	* @throws CartException If the user's cart is already empty.
+	*/
+	 public String clearProductFromCart(Long userId )throws CartException,LoginException,UsersNotFoundException;
+	 
+	 
+	 /**
+	 This method is used to view all products in a user's cart.
+	 @param userId The ID of the user who owns the cart.
+	 @param cartId The ID of the cart containing the products.
+	 @return A List of products in the user's cart.
+	 @throws CartException If the user's cart is empty or cannot be found.
+	 @throws LoginException If there is an authentication error while attempting to view the user's cart.
+	 @throws UsersNotFoundException If the user specified by the userId parameter cannot be found in the system.
+	 */
+	 
+	 public List<Product> viewAllProductFromCart(Long userId,Long cartId )throws CartException,LoginException,UsersNotFoundException;
 	
 	
 	
