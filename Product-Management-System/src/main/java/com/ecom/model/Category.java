@@ -31,9 +31,9 @@ public class Category {
 	private Long categoryId;
 	private String type;
 	
-	@OneToMany(cascade = CascadeType.ALL )
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "category" )
 	@JsonIgnore
-	private List<Product> list = new ArrayList<>();
+	private List<Product> list;
 	
 	
 	

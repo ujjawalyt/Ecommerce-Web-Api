@@ -31,12 +31,12 @@ public class Product {
 	private Long productId;
 	private String productName;
 
-	private String descprition;
-	
-
+	private String description;
+	private String url;
+	private Double rating;
 	private Double price;
 
-	private Integer stock;
+	private Integer quantity;
 	
 	
 	@JsonIgnore

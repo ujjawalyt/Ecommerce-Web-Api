@@ -1,5 +1,6 @@
 package com.ecom.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +54,117 @@ public class ProductServiceImpl implements  ProductService{
 		return product;
 
 	}
+
+
+	@Override
+	public String deleteProductByI(Long productId, String key) throws ProductNotFoundException, AdminNotFoundException {
+		
+		AdminCurrentSession isPresent=currentAdminSessionDao.findByAdminKey(key);
+		if(isPresent==null) {
+			throw new AdminNotFoundException("Admin is not found with this key--- "+ key);
+			
+		}
+		Optional<Product> isPresentProduct = productRepository.findById(productId);
+      if(isPresentProduct.isPresent()) {
+	isPresentProduct.get().setCategory(null);
+	productRepository.delete(isPresentProduct.get());
+	return "Product Deleted Successfully..";
+
+		
 	
+	}else {
+		throw new ProductNotFoundException("Product not found with this productId -" + productId);
+	}
+	
+}
+
+
+	@Override
+	public Product findProductById(Long ProductId) throws ProductNotFoundException {
+		
+		Optional<Product> isOptional = productRepository.findById(ProductId);
+		if(isOptional.isEmpty()) {
+			throw new ProductNotFoundException("Product with this productId not Found-"+ ProductId);
+		}
+		return isOptional.get();
+	}
+
+
+	@Override
+	public List<Product> viewAllProduct() throws ProductNotFoundException {
+		
+		List<Product> ispProducts = productRepository.findAll();
+		if(ispProducts.size()==0) {
+			throw new ProductNotFoundException("Product with not Found..!");
+		}
+		return ispProducts;
+		
+	}
+
+
+	@Override
+	public List<Product> findProductByName(String productName) throws ProductNotFoundException {
+		
+		
+		List<Product> ispProducts = productRepository.findByProductName(productName);
+		if(ispProducts.size()==0) {
+			throw new ProductNotFoundException("Product with not name is not Found..!");
+		}
+		return ispProducts;
+	}
+
+
+	@Override
+	public List<Product> findAllProductsSortedByPrice(String sortOrder) throws ProductNotFoundException {
+
+		    List<Product> products = null;
+	        if (sortOrder.equalsIgnoreCase("asc")) {
+	            products = productRepository.findAllProductsSortedByPriceAsc();
+	        } else if (sortOrder.equalsIgnoreCase("desc")) {
+	            products = productRepository.findAllProductsSortedByPriceDesc();
+	        }
+	        return products;
+	}
+
+
+	@Override
+	public List<Product> findProductsSortedByRatingAsc() {
+		
+		 return productRepository.findAllProductsSortedByRatingAsc();
+	}
+
+
+	@Override
+	public List<Product> findProductsSortedByRatingDesc() {
+		
+		return productRepository.findAllProductsSortedByRatingDesc();
+	}
+
+
+	@Override
+	public Product updateProductById(Long ProductId, String adminKey, Product product)
+			throws ProductNotFoundException, AdminNotFoundException {
+		
+		Optional<Product> optionalProduct = productRepository.findById(ProductId);
+	    if (!optionalProduct.isPresent()) {
+	        throw new ProductNotFoundException("Product with id " + ProductId + " not found");
+	    }
+		AdminCurrentSession isPresent=currentAdminSessionDao.findByAdminKey(adminKey);
+		if(isPresent==null) {
+			throw new AdminNotFoundException("Admin is not found with this key--- "+ adminKey);
+			
+		}
+		
+	    
+	    Product existingProduct = optionalProduct.get();
+	    existingProduct.setProductName(product.getProductName());
+	    existingProduct.setPrice(product.getPrice());
+	    existingProduct.setRating(product.getRating());
+	    existingProduct.setDescription(product.getDescription());
+	    existingProduct.setQuantity(product.getQuantity() );
+	 return   productRepository.save(existingProduct);
+		
+	
+	}
+
 }

@@ -102,5 +102,17 @@ public class GlobalExceptionHandler {
 		}
 	
 	
+	@ExceptionHandler(CartException.class)
+	public ResponseEntity<MyErrorDetail> myCEHandler(CartException ce ,WebRequest wr){
+		
+		MyErrorDetail error = new MyErrorDetail();
+		error.setTimestamp(LocalDateTime.now());
+		error.setMessage(ce.getMessage());
+		error.setDescription(wr.getDescription(false));
+		
+		return new ResponseEntity<MyErrorDetail>(error,HttpStatus.BAD_REQUEST);
+
+		}
+	
 	
 }
