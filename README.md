@@ -80,15 +80,15 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
 
 
 * `POST /save/{adminKey}` : The `admin key` to authenticate the request,
-  `Request Body`: JSON object representing the category to be added
+  `Request Body`: JSON object representing the category to be added.
 * `PUT /update/{adminKey}/{categoryId}` : `adminKey`: The admin key to authenticate the request
-   `categoryId`: The id of the category to be updated
-`Request Body:` JSON object representing the updated category details
+   `categoryId`: The id of the category to be updated.
+`Request Body:` JSON object representing the updated category details.
 * `DELETE /delete/{adminKey}/{categoryId}` : `adminKey`: The admin key to authenticate the request
-`categoryId`: The id of the category to be deleted
-* `GET /getAll/{adminKey}` : `adminKey` : The admin key to authenticate the request
+`categoryId`: The id of the category to be deleted.
+* `GET /getAll/{adminKey}` : `adminKey` : The admin key to authenticate the request.
 * `GET /getById/{adminKey}/{categoryId}` : `adminKey`: The admin key to authenticate the request
-`categoryId`: The id of the category to be retrieved
+`categoryId`: The id of the category to be retrieved.
 
 
 ### Category Module
@@ -103,6 +103,23 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
 * `GET /getAll/sortByPrice` : Retrieves all products sorted by price in either ascending or descending order.
 * `GET ResponseEntity` : Retrieves all products sorted by rating in ascending order.
 * `GET /getAllByRatingDesc` : Retrieves all products sorted by rating in descending order.
+
+
+### Cart Module
+
+
+* `POST /add/{productId}/{userId}` :This endpoint adds a product to the cart of the specified user.
+* `DELETE /delete/{productId}/{userId}` : This endpoint removes a product from the cart of the specified user.
+* `PUT /update/{productId}/{userId}/{quantity}` : This endpoint increases the quantity of a product in the cart of the specified user.
+* `PUT /{productId}/{userId}/{quantity}` : This endpoint decreases the quantity of a product in the cart of the specified user.
+* `PUT/update/{productId}/{userId}/{quantity}` : This endpoint increases the quantity of a product in the cart of the specified user.
+* `GET /getAllProduct/{userId}/{cartId}` : This endpoint retrieves a list of all products in the specified user's cart with the specified cart ID.
+* `PUT /remove/{userId}` :This endpoint removes all products from the cart for the specified user.
+
+
+
+
+
 
 #### For any feedback, report, suggestions, you can contact with me
 ### THANK YOU
