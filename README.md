@@ -1,6 +1,12 @@
 # Ecommerce-Web-Api
 
-The Product Management System is a web-based application that enables organizations to manage their product inventory and sales. This project contains the backend implementation of the Product Management System using Spring Boot.
+The Ecommerce-Web-Api is a backend implementation of the Product Management System built with Spring Boot. This web-based application enables organizations to effectively manage their product inventory and sales. The API provides various endpoints to perform operations related to product management such as adding, updating, and deleting products, as well as retrieving products based on various criteria such as category, price range, and availability. Additionally, it also provides endpoints for managing user accounts, such as creating new accounts, updating account details, and logging in and out of the system. With its user-friendly interface and robust functionality, the Ecommerce-Web-Api is an essential tool for any organization looking to streamline their product management and sales processes.
+
+
+
+
+
+
 
 
 ### Technical Stacks
@@ -21,6 +27,7 @@ The Product Management System is a web-based application that enables organizati
 -  Admin Module
 -  Users Module
 -  Category Module
+-  Product Module
 
 
 
@@ -45,22 +52,28 @@ The Product Management System is a web-based application that enables organizati
 
 ### Admin Module
 
-* `POST /add` : Register a new admin with proper data validation and admin session
-* `POST /login` : Admin can login with username  and password provided at the time of registation
-* `DELETE/logout` : Admin can logout from session key
-* `PUT /update/{key}` : Updates admin details
-* `DELETE /delete/{key}` : Deletes the admin with passed key
+* `POST /save` : Adds a new admin to the system.
+* `POST /login` : Allows an admin to login to the system using their username and password.`Request Body`: JSON object representing the admin's login credentials
+*  `DELETE /logout/{sessionKey}` : `Path Parameters`: `sessionKey` The session key of the admin to logout
+* `PUT /update/{sessionKey}`: `Path Parameters`: `sessionKey` The session key of the admin to update
+`Request Body`: JSON object representing the updated admin details
+* `DELETE /delete/{sessionKey}` : `Path Parameters :` `sessionKey` The session key of the admin to delete
 
 
 ### Users Module
 
 
-* `POST /save` : Adding new users
-* `POST /login` : Users can login with username  and password provided at the time of registation
-* `DELETE/logout` : Users can logout from session key
-* `PUT /update` : Updates Users details 
-* `DELETE /delete/{id}` : Deletes logged in user on the basis of id
-* `GET /Users/{id}` : Getting Users on the basis of id
+* `POST /save` : Adds a new user to the system.
+* `POST /login` : Allows a user to login with their username and password. `Request Body`: UserLoginDto object in JSON format
+* `DELETE/logout` : Allows a user to logout from the system. `Request Header:` Authorization containing the session key
+* `PUT /update` : Updates an existing user in the system.
+`Request Header:` Authorization containing the session key
+`Request Body:` User object in JSON format
+* `DELETE /delete/{id}` : Deletes an existing user from the system
+`Path Parameters:`id: The ID of the user to delete
+`Request Header:` Authorization containing the session key
+* `GET /Users/{id}` : Retrieves a user by their ID `Path Parameters:` id: The ID of the user to retrieve
+`Request Header:` Authorization containing the session key
 
 
 ### Category Module
@@ -70,8 +83,7 @@ The Product Management System is a web-based application that enables organizati
   `Request Body`: JSON object representing the category to be added
 * `PUT /update/{adminKey}/{categoryId}` : `adminKey`: The admin key to authenticate the request
    `categoryId`: The id of the category to be updated
-Request Body: JSON object representing the updated category details
-
+`Request Body:` JSON object representing the updated category details
 * `DELETE /delete/{adminKey}/{categoryId}` : `adminKey`: The admin key to authenticate the request
 `categoryId`: The id of the category to be deleted
 * `GET /getAll/{adminKey}` : `adminKey` : The admin key to authenticate the request
@@ -79,6 +91,18 @@ Request Body: JSON object representing the updated category details
 `categoryId`: The id of the category to be retrieved
 
 
+### Category Module
+
+
+* `POST /save/{categoryId}/{adminKey}` : Adds a new product to the system and associates it with the specified category.
+* `DELETE /delete/{productId}/{adminKey}` : Deletes a product from the system based on its unique identifier and the admin key provided.
+* `GET /{productId}` : Retrieves a product from the system based on its unique identifier.
+* `GET /getAll` : Retrieves all products stored in the system.
+* `GET /{productName}` : Retrieves a list of products that match the given product name.
+* `PUT /update/{productId}/{adminKey}` : Updates a product's details based on its unique identifier and the admin key provided.
+* `GET /getAll/sortByPrice` : Retrieves all products sorted by price in either ascending or descending order.
+* `GET ResponseEntity` : Retrieves all products sorted by rating in ascending order.
+* `GET /getAllByRatingDesc` : Retrieves all products sorted by rating in descending order.
 
 #### For any feedback, report, suggestions, you can contact with me
 ### THANK YOU
