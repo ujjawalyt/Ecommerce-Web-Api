@@ -126,9 +126,14 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
 * `POST /{userId}/{cartId}` : Creates a new order from the specified cart.`Request Body`: JSON representation of the Orders object containing information about the new order.
 * `GET /{userId}/{orderId}` : Retrieves the details of the specified order.`Returns:` The Orders object containing the details of the specified order.
 * `DELETE /{orderId}/{userId}` : Deletes the specified order from the system.`Returns:` The Orders object representing the deleted order.
-*`PUT /{orderId}/{status}` : Updates the status of the specified order.`Returns:` The updated Orders object with the status updated.
+* `PUT /{orderId}/{status}` : Updates the status of the specified order.`Returns:` The updated Orders object with the status updated.
 
 
+##  ProductBill Module
+
+
+* `POST /{orderId}/{userId}`:Adds the billing information for a given order and calculates the total amount payable for the user.`Returns` a ProductBill object with the updated total amount
+* `GET /{billId}/{userId}` : Retrieves the billing information for a given bill ID and user ID. `Returns` a ProductBill object containing the billing information.
 
 
 
