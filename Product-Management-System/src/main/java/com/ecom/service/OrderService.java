@@ -14,11 +14,12 @@ public interface OrderService {
     public Orders addOrderFromCart(Orders orders, Long cartId ,Long userId)
     		throws OrderNotFoundException,CartException,LoginException,UsersNotFoundException;
 	
-	public Orders viewOrderFromCart(Long orderId, Long userId)throws OrderNotFoundException,LoginException;;
+	public Orders viewOrderFromCart(Long orderId, Long userId)
+			throws OrderNotFoundException,LoginException,UsersNotFoundException;
 	
-//	public List<Order> viewOrdersByDate(LocalDate startDate, LocalDate endDate)throws OrderException;
-//	
-//	public Order updateOrderStatus(int orderId, String status)throws OrderException;
-//	
-//	public Order deleteOrder(int orderId)throws OrderException;
+	public Orders updateOrderStatus(Long orderId, String status)
+			throws OrderNotFoundException;
+	
+	public Orders deleteOrderFromCart(Long orderId, Long userId)
+			throws OrderNotFoundException,LoginException,UsersNotFoundException;
 }
