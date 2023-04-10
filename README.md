@@ -28,6 +28,9 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
 -  Users Module
 -  Category Module
 -  Product Module
+-  Cart Module
+-  Orders Module
+-  ProductBill Module
 
 
 
@@ -116,6 +119,14 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
 * `GET /getAllProduct/{userId}/{cartId}` : This endpoint retrieves a list of all products in the specified user's cart with the specified cart ID.
 * `PUT /remove/{userId}` :This endpoint removes all products from the cart for the specified user.
 
+
+## Orders Module
+
+
+* `POST /{userId}/{cartId}` : Creates a new order from the specified cart.`Request Body`: JSON representation of the Orders object containing information about the new order.
+* `GET /{userId}/{orderId}` : Retrieves the details of the specified order.`Returns:` The Orders object containing the details of the specified order.
+* `DELETE /{orderId}/{userId}` : Deletes the specified order from the system.`Returns:` The Orders object representing the deleted order.
+*`PUT /{orderId}/{status}` : Updates the status of the specified order.`Returns:` The updated Orders object with the status updated.
 
 
 
