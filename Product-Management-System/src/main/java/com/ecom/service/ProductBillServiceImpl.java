@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecom.exceptions.AdminNotFoundException;
+import com.ecom.exceptions.BillNotFoundException;
 import com.ecom.exceptions.CartException;
 import com.ecom.exceptions.CategoryNotFoundException;
 import com.ecom.exceptions.LoginException;
@@ -80,6 +81,40 @@ public class ProductBillServiceImpl implements ProductBillService{
 	    
 	    
 	return   productBillRepository.save(bill);
+	}
+
+	@Override
+	public ProductBill viewBillById(Long billId, Long userId)
+			throws BillNotFoundException, LoginException, UsersNotFoundException {
+		
+		if (billId == null) {
+	        throw new IllegalArgumentException("billId cannot be null");
+	    }
+	    if (userId == null) {
+	        throw new IllegalArgumentException("userId cannot be null");
+	    }
+		
+	  
+	    Optional<Users> optionalUser = usersRepository.findById(userId);
+	    if (!optionalUser.isPresent()) {
+	        throw new UsersNotFoundException("User with ID " + userId + " not found");
+	    }
+	    Users users = optionalUser.get();
+	    
+	    
+	    Optional<CurrentUserSession> isCurrent = currentUserSessionDao.findById(users.getUserId());
+	    if(!isCurrent.isPresent()) {
+	    	throw new LoginException("User is not Loggin With this userId"+ userId);
+	    }
+	    
+	    Optional<ProductBill> isCurrentBill = productBillRepository.findById(billId);
+	    if(!isCurrentBill.isPresent()) {
+	    	throw new BillNotFoundException("Product Bill is not Found With this billId"+ billId);
+	    }
+	    
+	    
+		
+		return isCurrentBill.get();
 	}
 
 

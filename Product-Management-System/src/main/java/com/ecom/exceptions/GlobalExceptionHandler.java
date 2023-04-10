@@ -114,5 +114,15 @@ public class GlobalExceptionHandler {
 
 		}
 	
-	
+	@ExceptionHandler(BillNotFoundException.class)
+	public ResponseEntity<MyErrorDetail> myBNFEHandler(BillNotFoundException bnf ,WebRequest wr){
+		
+		MyErrorDetail error = new MyErrorDetail();
+		error.setTimestamp(LocalDateTime.now());
+		error.setMessage(bnf.getMessage());
+		error.setDescription(wr.getDescription(false));
+		
+		return new ResponseEntity<MyErrorDetail>(error,HttpStatus.BAD_REQUEST);
+
+		}
 }
