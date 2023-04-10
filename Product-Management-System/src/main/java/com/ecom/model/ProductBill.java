@@ -30,15 +30,12 @@ public class ProductBill {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer billId;
+	private Long billId;
 	
-	private LocalDate billDate;
-	
-	private LocalTime billTime;
-	
+	private LocalDate billDate = LocalDate.now();
+	private LocalTime billTime = LocalTime.now();
 	private Integer totalItem;
-	
-	private Integer totalPrice;
+	private Double totalPrice;
 	
 	@JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL)

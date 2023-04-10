@@ -12,23 +12,24 @@ import com.ecom.exceptions.CartException;
 import com.ecom.exceptions.LoginException;
 import com.ecom.exceptions.OrderNotFoundException;
 import com.ecom.exceptions.UsersNotFoundException;
-import com.ecom.model.Orders;
-import com.ecom.service.OrderService;
+import com.ecom.model.ProductBill;
+import com.ecom.service.ProductBillService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
-@RequestMapping("ecom/orders")
-public class OrderController {
+@RequestMapping("/ecom")
+public class ProductBillController {
 
 	@Autowired
-	private OrderService orderService;
+	private ProductBillService productBillService;
 	
-
-	@PostMapping("/{userId}/{cartId}")
-	public ResponseEntity<Orders> proceedOrdersFromCart(@PathVariable("userId") Long userId,@PathVariable("cartId") Long cartId,@RequestBody Orders orders)
+	@PostMapping("/{orderId}/{userId}")
+	public ResponseEntity<ProductBill> payBillOfProductHandler(@PathVariable("orderId") Long orderId, @PathVariable("userId") Long userId, @RequestBody ProductBill bill)
 			throws OrderNotFoundException,CartException,LoginException,UsersNotFoundException{
 		
-		return new ResponseEntity<Orders>(orderService.addOrderFromCart(orders, cartId, userId),HttpStatus.ACCEPTED);
+		return new ResponseEntity<ProductBill>
+		(productBillService.totalBillOfUser(bill, orderId, userId),HttpStatus.ACCEPTED);
 	}
+	
 }

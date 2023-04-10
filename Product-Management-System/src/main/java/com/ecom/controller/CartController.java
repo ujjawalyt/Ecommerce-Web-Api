@@ -76,7 +76,7 @@ public class CartController {
 		return new ResponseEntity<String>(cart,HttpStatus.OK);
 	}
 	
-	@GetMapping("getAll/{userId}/{cartId}")
+	@GetMapping("getAllProduct/{userId}/{cartId}")
 	public ResponseEntity<List<Product>> getListOfProductFromCartHandler
 	(@PathVariable ("userId")Long userId,@PathVariable ("cartId")Long cartId)
 			throws CartException,LoginException,UsersNotFoundException{

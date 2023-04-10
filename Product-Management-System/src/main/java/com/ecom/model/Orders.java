@@ -30,11 +30,10 @@ public class Orders {
 	@Id
 	@GeneratedValue(strategy =  GenerationType.AUTO)
 	private Long orderId;
-	private Double totalAmount;
 	private String paymentType;
-    private LocalDate orderDate;
-	private LocalTime orderTime;
-	private String status;
+    private LocalDate orderDate = LocalDate.now();
+	private LocalTime orderTime = LocalTime.now();
+	private String status = "Pending";
 	
 	@ManyToOne
 	private Users users;
