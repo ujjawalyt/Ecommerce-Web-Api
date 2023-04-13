@@ -66,7 +66,7 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
 
   * Admins can view and manage categories.
   * Admins can add new categories.
-* Product Module :-
+* Product Features :-
    This module provides the functionality for admins to manage products. The following features are included:
 
   *  Admins can view and manage products.
