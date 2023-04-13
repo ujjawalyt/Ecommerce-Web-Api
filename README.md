@@ -87,6 +87,11 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
 
   *  Admins can view and manage product bills.
   *  Product bills are generated automatically for orders.
+
+# ER Diagram
+The following Diagram depicts the flow of our Entity Relation Diagram to simplify the work flow.
+![Screenshot 2023-04-13 094235](https://user-images.githubusercontent.com/87421981/231651857-c4916b59-7376-4776-ab80-d40046619e0e.png)
+
  
   
 
