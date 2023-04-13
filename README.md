@@ -88,12 +88,13 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
   *  Admins can view and manage product bills.
   *  Product bills are generated automatically for orders.
 
-# ER Diagram
+### ER Diagram
 The following Diagram depicts the flow of our Entity Relation Diagram to simplify the work flow.
 ![Screenshot 2023-04-13 094235](https://user-images.githubusercontent.com/87421981/231651857-c4916b59-7376-4776-ab80-d40046619e0e.png)
 
- 
-  
+### Project Structure
+![Screenshot 2023-04-13 095658](https://user-images.githubusercontent.com/87421981/231653589-1ae1eec9-7a4c-4725-a2d7-a7ce5f047f06.png)
+
 
 
 ### Installation & Run
@@ -197,6 +198,17 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 * `POST /{orderId}/{userId}`:Adds the billing information for a given order and calculates the total amount payable for the user.`Returns` a ProductBill object with the updated total amount
 * `GET /{billId}/{userId}` : Retrieves the billing information for a given bill ID and user ID. `Returns` a ProductBill object containing the billing information.
 
+
+### some screenshots of the Swagger UI 
+
+![ujjawal](https://user-images.githubusercontent.com/87421981/231655752-434e114f-d9bb-4cd4-8c62-4fb405cb77be.PNG)
+
+![Screenshot 2023-04-13 100409](https://user-images.githubusercontent.com/87421981/231655114-562f5bf3-f3cd-46cc-9693-5cf74191135b.png)
+![Screenshot 2023-04-13 100529](https://user-images.githubusercontent.com/87421981/231655120-00a82767-187c-4dc1-9f78-7ed64c98c408.png)
+
+![Screenshot 2023-04-13 100602](https://user-images.githubusercontent.com/87421981/231655292-3686417e-6a8a-4224-9f5f-b186bd35786f.png)
+
+![screenshort1](https://user-images.githubusercontent.com/87421981/231656006-59a9b324-ad68-4367-a04f-7ceb2ad22d90.PNG)
 
 
 #### For any feedback, report, suggestions, you can contact with me
