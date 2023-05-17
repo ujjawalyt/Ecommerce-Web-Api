@@ -2,6 +2,8 @@ package com.ecom.controller;
 
 
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +30,7 @@ public class UsersController {
 	private UsersService usersService;
 	
 	@PostMapping("/save")
-	private ResponseEntity<Users> myInsertNewUsersHandler( @RequestBody Users users) throws UsersNotFoundException{
+	private ResponseEntity<Users> insertNewUsersHandler(@Valid  @RequestBody Users users) throws UsersNotFoundException{
 		
 		return new ResponseEntity<Users>(usersService.addNewUsers(users),HttpStatus.CREATED);
 		

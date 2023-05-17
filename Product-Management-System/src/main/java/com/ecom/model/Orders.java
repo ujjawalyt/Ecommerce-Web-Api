@@ -35,7 +35,7 @@ public class Orders {
 	private LocalTime orderTime = LocalTime.now();
 	private String status = "Pending";
 	
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE, CascadeType.PERSIST})
 	private Users users;
 	
 	@OneToOne
