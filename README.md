@@ -90,7 +90,8 @@ The Ecommerce-Web-Api is a backend implementation of the Product Management Syst
 
 ### ER Diagram
 The following Diagram depicts the flow of our Entity Relation Diagram to simplify the work flow.
-![Screenshot 2023-04-13 094235](https://user-images.githubusercontent.com/87421981/231651857-c4916b59-7376-4776-ab80-d40046619e0e.png)
+![ecom er digram](https://github.com/ujjawalyt/Ecommerce-Web-Api/assets/87421981/dd6d0cfb-c401-4de3-adf5-88dc1d9b2f8d)
+
 
 ### Project Structure
 ![Screenshot 2023-04-13 095658](https://user-images.githubusercontent.com/87421981/231653589-1ae1eec9-7a4c-4725-a2d7-a7ce5f047f06.png)
