@@ -201,9 +201,11 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 
 ### some screenshots of the Swagger UI 
 
-![ujjawal](https://user-images.githubusercontent.com/87421981/231655752-434e114f-d9bb-4cd4-8c62-4fb405cb77be.PNG)
+!![ecom](https://github.com/ujjawalyt/Ecommerce-Web-Api/assets/87421981/a0ea105a-a40b-4ece-bd38-01a3235d50a2)
+![ecom1](https://github.com/ujjawalyt/Ecommerce-Web-Api/assets/87421981/46617470-68b1-41b6-b291-7f03eb4628bc)
 
-![Screenshot 2023-04-13 100409](https://user-images.githubusercontent.com/87421981/231655114-562f5bf3-f3cd-46cc-9693-5cf74191135b.png)
+
+
 ![Screenshot 2023-04-13 100529](https://user-images.githubusercontent.com/87421981/231655120-00a82767-187c-4dc1-9f78-7ed64c98c408.png)
 
 ![Screenshot 2023-04-13 100602](https://user-images.githubusercontent.com/87421981/231655292-3686417e-6a8a-4224-9f5f-b186bd35786f.png)
